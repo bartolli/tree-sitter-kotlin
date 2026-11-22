@@ -4,10 +4,10 @@ This crate provides a Kotlin grammar for the [tree-sitter](https://tree-sitter.g
 
 ```toml
 tree-sitter = "0.23"
-tree-sitter-kotlin = "0.3.9"
+tree-sitter-kotlin-codanna = "0.4.0"
 ```
 
-Typically, you will use the `language` function to add this grammar to a tree-sitter [`Parser`](https://docs.rs/tree-sitter/*/tree_sitter/struct.Parser.html), and then use the parser to parse some code:
+Typically, you will use the `LANGUAGE` constant to add this grammar to a tree-sitter [`Parser`](https://docs.rs/tree-sitter/*/tree_sitter/struct.Parser.html), and then use the parser to parse some code:
 
 ```rust
 let code = r#"
@@ -17,6 +17,6 @@ let code = r#"
   )
 "#;
 let mut parser = Parser::new();
-parser.set_language(&tree_sitter_kotlin::language()).expect("Error loading Kotlin grammar");
+parser.set_language(&tree_sitter_kotlin_codanna::LANGUAGE.into()).expect("Error loading Kotlin grammar");
 let parsed = parser.parse(code, None);
 ```

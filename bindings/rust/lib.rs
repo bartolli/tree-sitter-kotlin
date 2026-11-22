@@ -14,7 +14,7 @@
 //! }
 //! "#;
 //! let mut parser = Parser::new();
-//! let language = tree_sitter_kotlin::LANGUAGE;
+//! let language = tree_sitter_kotlin_codanna::LANGUAGE;
 //! parser
 //!     .set_language(&language.into())
 //!     .expect("Error loading Kotlin grammar");
